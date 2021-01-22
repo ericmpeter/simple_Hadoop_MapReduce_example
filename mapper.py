@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 import sys
+from sklearn.feature_extraction import stop_words
+stops = set(stop_words.ENGLISH_STOP_WORDS)
+
 
 # get all lines from stdin
 for line in sys.stdin:
@@ -11,4 +14,5 @@ for line in sys.stdin:
 
     # output tuples (word, 1) in tab-delimited format
     for word in words:
-        print '%s\t%s' % (word, "1")
+        if word not in stops:
+            print '%s\t%s' % (word, "1")
