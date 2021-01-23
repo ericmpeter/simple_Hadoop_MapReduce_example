@@ -12,9 +12,6 @@ for line in sys.stdin:
     #change everything to lowercase
     line = line.strip().lower()
     
-    #remove punctuation
-    line.translate(None, string.punctuation)
-
     # split the line into words; splits on any whitespace
     words = line.split()
     
