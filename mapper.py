@@ -17,5 +17,7 @@ for line in sys.stdin:
     
     # remove stopwords, output tuples (word, 1) in tab-delimited format
     for word in words:
-        if word not in stops:
-            print '%s\t%s' % (word, "1")
+        table = string.maketrans("","")
+        word1 = word.translate(table, string.punctuation)
+        if word1 not in stops:
+            print '%s\t%s' % (word1, "1")
